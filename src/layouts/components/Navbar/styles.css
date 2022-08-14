@@ -1,0 +1,7 @@
+#tag-container::-webkit-scrollbar {
+    height: 5px;
+    display: none;
+}
+
+#tag-container {
+}
