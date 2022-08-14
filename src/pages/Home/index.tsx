@@ -1,5 +1,9 @@
+import Destinations from "../../components/Destinations";
+
 function Home() {
-    return <div>Home page</div>
+    return <div>
+        <Destinations/>
+    </div>
 }
 
 export default Home

@@ -5,7 +5,7 @@ import IRoutes from "./types/routes.interface";
 import MainLayout from "./layouts/MainLayout";
 
 function App() {
-  return (
+    return (
       <BrowserRouter>
         <div className="App">
           <Routes>

@@ -47,8 +47,8 @@ function Navbar() {
                 {tags.map(tag => <TagButton key={tag.id} tagName={tag.tag_name} tagCode={tag.tag_code}/>)}
             </div>
             <div className="flex gap-x-5 min-w-fit">
-                <Button name="Sign In" type={EButtonType.PRIMARY}/>
-                <Button name="Sign Up" type={EButtonType.PRIMARY}/>
+                <Button content="Sign In" type={EButtonType.PRIMARY}/>
+                <Button content="Sign Up" type={EButtonType.PRIMARY}/>
             </div>
         </header>
     )
