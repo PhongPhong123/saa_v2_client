@@ -7,7 +7,7 @@ interface IProps {
 
 function TagButton({tagName, tagCode}: IProps) {
     return (
-        <div className={`${styles.tagButton} bg-blue-400 rounded-md px-3 text-center min-w-fit text-white drop-shadow-md`}>
+        <div className={`${styles.tagButton} bg-opa rounded-md px-3 text-center min-w-fit text-blur-gray drop-shadow-md`}>
             {tagName}
         </div>
     )

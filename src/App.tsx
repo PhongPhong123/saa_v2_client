@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { publicRoutes } from "./routes";
 import IRoutes from "./types/routes.interface";
 import MainLayout from "./layouts/MainLayout";
+import "./App.css";
 
 function App() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="App w-screen h-screen">
           <Routes>
             {publicRoutes.map((route: IRoutes, index) => {
               const Page = route.component;

@@ -17,7 +17,7 @@ function Destination({name, codename, image}: IProps) {
             <div className="w-44 h-44 rounded-md overflow-hidden">
                 <img className="w-full h-full" src={image} alt={name}/>
             </div>
-            <p className="text-center font-bold">{name}</p>
+            <p className="text-center text-blur-gray font-bold">{name}</p>
         </div>
     )
 }
