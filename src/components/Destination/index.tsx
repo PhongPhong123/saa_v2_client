@@ -1,23 +1,17 @@
-import styles from './styles.module.css';
+import {ImLocation} from 'react-icons/im';
+import styles from './styles.module.css'
 
 interface IProps {
     name: string;
-    codename: string;
-    image?: string;
 }
 
-function Destination({name, codename, image}: IProps) {
-    if (image)
-        image = `${process.env.REACT_APP_SERVER_HOST}/public/locations/${image}`
-    else
-        image = `${process.env.REACT_APP_SERVER_HOST}/public/locations/default_location.png`
-
+function Destination({name}: IProps) {
     return (
         <div className={styles.destination}>
-            <div className="w-44 h-44 rounded-md overflow-hidden">
-                <img className="w-full h-full" src={image} alt={name}/>
+            <div className="flex items-center p-4 gap-x-5">
+                <ImLocation className="text-xl text-blur-gray"/><span className="text-lg font-bold text-blur-gray">{name}</span>
             </div>
-            <p className="text-center text-blur-gray font-bold">{name}</p>
+            <hr/>
         </div>
     )
 }

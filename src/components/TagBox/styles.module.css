@@ -1,0 +1,8 @@
+.destination {
+    transition: transform 0.25s linear;
+}
+
+.destination:hover {
+    cursor: pointer;
+    transform: scale(1.02);
+}

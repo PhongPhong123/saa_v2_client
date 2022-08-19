@@ -1,0 +1,8 @@
+.destination {
+    transition: opacity 0.25s linear, box-shadow 0.25s linear;
+}
+
+.destination:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}

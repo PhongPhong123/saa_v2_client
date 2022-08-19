@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from "./components/GlobalStyles";
+import {AppointmentPropertyProvider} from "./contexts/appointmentProperty";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -11,7 +12,9 @@ const root = ReactDOM.createRoot(
 root.render(
     <React.StrictMode>
         <GlobalStyles>
-            <App/>
+            <AppointmentPropertyProvider>
+                <App/>
+            </AppointmentPropertyProvider>
         </GlobalStyles>
     </React.StrictMode>
 );
