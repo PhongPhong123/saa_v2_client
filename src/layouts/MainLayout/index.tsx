@@ -9,7 +9,7 @@ function MainLayout({children}: IProps) {
     return (
         <div>
             <Navbar/>
-            <div className="container mx-auto px-2">
+            <div className="container mx-auto px-2 md:px-0">
                 {children}
             </div>
         </div>

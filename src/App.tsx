@@ -8,7 +8,7 @@ import "./App.css";
 function App() {
     return (
       <BrowserRouter>
-        <div className="App w-screen h-screen">
+        <div className="App w-screen lg:h-screen">
           <Routes>
             {publicRoutes.map((route: IRoutes, index) => {
               const Page = route.component;

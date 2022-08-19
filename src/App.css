@@ -1,3 +1,7 @@
+:root {
+  --opa-color: rgba(255, 255, 255, 0.4);
+}
+
 .App {
   background: rgb(238,174,227);
   background: -moz-radial-gradient(circle, rgba(238,174,227,1) 0%, rgba(148,233,232,1) 100%);
