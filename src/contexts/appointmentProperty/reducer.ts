@@ -7,12 +7,16 @@ export default function(state: IInitialState, action: IAction) {
         case actions.CHOOSE_TAG:
             return {
                 ...state,
-                tag: action.payload,
+                tag: {
+                    ...action.payload
+                },
             }
         case actions.CHOOSE_DESTINATION:
             return {
                 ...state,
-                destination: action.payload,
+                destination: {
+                    ...action.payload
+                },
             }
         case actions.CHOOSE_DATE:
             return {
@@ -22,8 +26,14 @@ export default function(state: IInitialState, action: IAction) {
         case actions.CLEAR:
             return {
                 ...state,
-                tag: "",
-                destination: "",
+                tag: {
+                    id: "",
+                    name: "",
+                },
+                destination: {
+                    codename: "",
+                    name: "",
+                },
                 date: "",
             }
         default:

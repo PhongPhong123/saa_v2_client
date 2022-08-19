@@ -8,11 +8,18 @@ import Destinations from "../../components/Destinations";
 function Home() {
     const appointmentPropertyContext = useContext(AppointmentPropertyContext);
 
+    function RenderOption() {
+        if (!appointmentPropertyContext.tag.name)
+            return <Tags/>
+        else if (!appointmentPropertyContext.destination.name)
+            return <Destinations/>
+    }
+
     return <div>
         <DestinationsSlide/>
         <div>
             <PropertySequenceUserChoose/>
-            {!appointmentPropertyContext.tag ? <Tags/> : !appointmentPropertyContext.destination ? <Destinations/> : null}
+            {RenderOption()}
         </div>
     </div>
 }

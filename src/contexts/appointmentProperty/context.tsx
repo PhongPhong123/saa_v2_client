@@ -6,22 +6,31 @@ interface IProps {
     children: React.ReactElement;
 }
 
+type TTag = { id: string, name: string };
+type TDestination = { codename: string, name: string };
+
 export interface IInitialState {
-    tag: string;
-    destination: string;
+    tag: TTag;
+    destination: TDestination;
     date: string;
-    setTag: (tagName: string) => void;
-    setDestination: (destination: string) => void;
+    setTag: (payload: TTag) => void;
+    setDestination: (payload: TDestination) => void;
     setDate: (date: string) => void;
 }
 
 const initialState: IInitialState = {
-    tag: "",
-    destination: "",
+    tag: {
+        id: "",
+        name: "",
+    },
+    destination: {
+        codename: "",
+        name: "",
+    },
     date: "",
-    setTag: (tagName: string) => {},
-    setDestination: (destination: string) => {},
-    setDate: (date: string) => {},
+    setTag: () => {},
+    setDestination: () => {},
+    setDate: () => {},
 }
 
 export const AppointmentPropertyContext = createContext<IInitialState>(initialState);
@@ -33,14 +42,14 @@ function AppointmentPropertyProvider({ children }: IProps) {
         tag: state.tag,
         destination: state.destination,
         date: state.date,
-        setTag: (tagName: string) => {
-            dispatch({ type: actions.CHOOSE_TAG, payload: tagName});
+        setTag: (payload: TTag) => {
+            dispatch({ type: actions.CHOOSE_TAG, payload});
         },
-        setDestination: (destination: string) => {
-            dispatch({ type: actions.CHOOSE_DESTINATION, payload: destination});
+        setDestination: (payload: TDestination) => {
+            dispatch({ type: actions.CHOOSE_DESTINATION, payload});
         },
-        setDate: (date: string) => {
-            dispatch({ type: actions.CHOOSE_DATE, payload: date});
+        setDate: (payload: string) => {
+            dispatch({ type: actions.CHOOSE_DATE, payload});
         }
     }
 

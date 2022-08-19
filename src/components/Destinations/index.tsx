@@ -9,7 +9,7 @@ function Destinations() {
 
     return (
         <div className={`${styles.destinations} mx-auto flex flex-col bg-opa w-2/3 h-52 lg:w-2/6 lg:h-96 rounded-md overflow-y-scroll`}>
-            {destinations.map(destination => <Destination key={destination.codename} name={destination.name}/>)}
+            {destinations.map(destination => <Destination key={destination.codename} codename={destination.codename} name={destination.name}/>)}
         </div>
     )
 }
