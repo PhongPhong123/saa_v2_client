@@ -1,4 +1,4 @@
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { AppointmentPropertyContext } from "../../contexts/appointmentProperty";
 import Tags from "../../components/Tags";
 import DestinationsSlide from "../../components/DestinationsSlide";
@@ -8,13 +8,24 @@ import Calendar, { IForwardRef as IForwardCalendarRef } from "../../components/C
 import Button, {EComponentType} from "../../components/Button";
 
 function Home() {
+    const [appointments, setAppointments] = useState([])
+
     const appointmentPropertyContext = useContext(AppointmentPropertyContext);
     const calendarRef = useRef<IForwardCalendarRef>({value: () => ""});
 
-    function submitSearch() {
+    async function submitSearch() {
         const calendarValue = calendarRef.current.value();
         appointmentPropertyContext.setDate(calendarValue);
+        try {
+            const response = await fetch(`${process.env.REACT_APP_SERVER_HOST}/appointments/features/searchs?tag_id=${appointmentPropertyContext.tag.id}&destination=${appointmentPropertyContext.destination.codename}&date=${calendarValue}`);
+            const responseJSON = await response.json();
+            setAppointments(responseJSON)
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+    console.log(appointments);
 
     function RenderOption() {
         if (!appointmentPropertyContext.tag.name)
