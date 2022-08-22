@@ -12,7 +12,8 @@ function Home() {
     const calendarRef = useRef<IForwardCalendarRef>({value: () => ""});
 
     function submitSearch() {
-        
+        const calendarValue = calendarRef.current.value();
+        appointmentPropertyContext.setDate(calendarValue);
     }
 
     function RenderOption() {
