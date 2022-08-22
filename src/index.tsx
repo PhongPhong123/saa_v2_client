@@ -4,7 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from "./components/GlobalStyles";
-import {AppointmentPropertyProvider} from "./contexts/appointmentProperty";
+import { AppointmentPropertyProvider } from "./contexts/appointmentProperty";
+import { SearchingProvider } from "./contexts/searching";
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -13,7 +14,9 @@ root.render(
     <React.StrictMode>
         <GlobalStyles>
             <AppointmentPropertyProvider>
-                <App/>
+                <SearchingProvider>
+                    <App/>
+                </SearchingProvider>
             </AppointmentPropertyProvider>
         </GlobalStyles>
     </React.StrictMode>
